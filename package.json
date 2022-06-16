@@ -1,0 +1,24 @@
+{
+  "name": "22-06-10-color-scheme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marthaloh/22-06-10-Color-Scheme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marthaloh/22-06-10-Color-Scheme/issues"
+  },
+  "homepage": "https://github.com/marthaloh/22-06-10-Color-Scheme#readme",
+  "devDependencies": {
+    "@types/p5": "^1.4.2",
+    "prettier": "^2.7.1",
+    "vite": "^2.9.12"
+  }
+}

@@ -1,3 +1,8 @@
+/// <reference path="./node_modules/@types/p5/lib/addons/p5.sound.d.ts" />
+/// <reference path="./node_modules/@types/p5/global.d.ts" />
+/// <reference path="./node_modules/@types/p5/literals.d.ts" />
+/// <reference path="./node_modules/@types/p5/constants.d.ts" />
+
 const bg = 25;
 
 function setup() {
@@ -9,8 +14,8 @@ function setup() {
 }
 
 function draw() {
-  translate (width/2, height/2);
-  
+  translate(width / 2, height / 2);
+
   const x = 0;
   const y = 0;
   const xc = 200;
@@ -45,157 +50,144 @@ function draw() {
 
   noStroke();
   rotate(hue);
-  
 
-// tetradic color scheme
-  console.log("tetradic",hue, sat, bri);
+  // tetradic color scheme
+  console.log("tetradic", hue, sat, bri);
   fill(hue, sat, bri);
-  arc(x, y, tetc*w, tetc*h, 300, 60);
+  arc(x, y, tetc * w, tetc * h, 300, 60);
   arc(-yc, -xc, 50, 50, 0, 90);
 
-  if(hue <= 270){
+  if (hue <= 270) {
     tet1 = 90;
   } else {
-    tet1 = 90-360;
+    tet1 = 90 - 360;
   }
-  console.log("tetradic",hue+tet1, sat, bri);
-  fill(hue+tet1, sat, bri);
-  arc(x, y, tetc*w, tetc*h, 60, 140);
+  console.log("tetradic", hue + tet1, sat, bri);
+  fill(hue + tet1, sat, bri);
+  arc(x, y, tetc * w, tetc * h, 60, 140);
   arc(-yc, -xc, 50, 50, 90, 180);
 
-  if(hue <= 180){
+  if (hue <= 180) {
     tet2 = 180;
   } else {
     tet2 = -90;
   }
-    console.log("tetradic",hue+tet2, sat, bri);
+  console.log("tetradic", hue + tet2, sat, bri);
 
-  fill(hue+tet2, sat, bri);
-  arc(x, y, tetc*w, tetc*h, 140, 220);
+  fill(hue + tet2, sat, bri);
+  arc(x, y, tetc * w, tetc * h, 140, 220);
   arc(-yc, -xc, 50, 50, 180, 270);
 
-  if(hue <= 90) {
+  if (hue <= 90) {
     tet3 = 270;
-  } else if(hue <= 180){
+  } else if (hue <= 180) {
     tet3 = -90;
-  } else if(hue <= 270){
+  } else if (hue <= 270) {
     tet3 = -180;
-  } else{
-    tet3 = 90-270;
+  } else {
+    tet3 = 90 - 270;
   }
-  console.log("tetradic",hue+tet3, sat, bri,"\n");
+  console.log("tetradic", hue + tet3, sat, bri, "\n");
 
-  fill(hue+tet3, sat, bri);
-  arc(x, y, tetc*w, tetc*h, 220, 300);
+  fill(hue + tet3, sat, bri);
+  arc(x, y, tetc * w, tetc * h, 220, 300);
   arc(-yc, -xc, 50, 50, 270, 360);
 
-  
   fill(0, 0, bg);
-  ellipse(x, y, tric*w+(blc*w-w), tric*h+(blc*h-h));
+  ellipse(x, y, tric * w + (blc * w - w), tric * h + (blc * h - h));
 
-  
-  
-// triadic color scheme
-  console.log("triadic",hue, sat, bri);
+  // triadic color scheme
+  console.log("triadic", hue, sat, bri);
   fill(hue, sat, bri);
-  arc(x, y, tric*w, tric*h, 300, 60);
+  arc(x, y, tric * w, tric * h, 300, 60);
   arc(yc, xc, 50, 50, 0, 120);
-  
-  if(hue <= 240){
+
+  if (hue <= 240) {
     tri1 = 120;
-  } else{
+  } else {
     tri1 = -120;
   }
-  
-console.log("triadic",hue+tri1, sat, bri);
-  fill(hue+tri1, sat, bri);
-  arc(x, y, tric*w, tric*h, 60, 180);
+
+  console.log("triadic", hue + tri1, sat, bri);
+  fill(hue + tri1, sat, bri);
+  arc(x, y, tric * w, tric * h, 60, 180);
   arc(yc, xc, 50, 50, 120, 240);
 
-  if(hue <= 120){
+  if (hue <= 120) {
     tri2 = 240;
-  } else if(hue <=240){
+  } else if (hue <= 240) {
     tri2 = -120;
   } else {
     tri2 = -240;
   }
-  console.log("triadic",hue+tri2, sat, bri,"\n");
-  fill(hue+tri2, sat, bri);
-  arc(x, y, tric*w, tric*h, 180, 300);
+  console.log("triadic", hue + tri2, sat, bri, "\n");
+  fill(hue + tri2, sat, bri);
+  arc(x, y, tric * w, tric * h, 180, 300);
   arc(yc, xc, 50, 50, 240, 360);
 
-  
   fill(0, 0, bg);
-  ellipse(x, y, comc*w+(blc*w-w), comc*h+(blc*h-h));
+  ellipse(x, y, comc * w + (blc * w - w), comc * h + (blc * h - h));
 
-
-  
-// complementary color scheme
-  console.log("complementary",hue, sat, bri);
+  // complementary color scheme
+  console.log("complementary", hue, sat, bri);
   fill(hue, sat, bri);
-  arc(x, y, comc*w, comc*h, 300, 60);
+  arc(x, y, comc * w, comc * h, 300, 60);
   arc(-xc, -yc, 50, 50, 0, 180);
-  
-  if(hue <= 180) {
-   com1 = 180;
-  } else{
-    com1 =-180;
-  }
-    console.log("complementary",hue + com1, sat, bri, "\n");
 
-  fill(hue+com1, sat, bri);
-  arc(x, y, comc*w, comc*h, 60, 300);
+  if (hue <= 180) {
+    com1 = 180;
+  } else {
+    com1 = -180;
+  }
+  console.log("complementary", hue + com1, sat, bri, "\n");
+
+  fill(hue + com1, sat, bri);
+  arc(x, y, comc * w, comc * h, 60, 300);
   arc(-xc, -yc, 50, 50, 180, 360);
 
-  
   fill(0, 0, bg);
-  ellipse(x, y, anac*w+(blc*w-w), anac*h+(blc*h-h));
+  ellipse(x, y, anac * w + (blc * w - w), anac * h + (blc * h - h));
 
-  
-  
-// analogous color scheme
-    console.log("analogous",hue, sat, bri);
+  // analogous color scheme
+  console.log("analogous", hue, sat, bri);
 
   fill(hue, sat, bri);
-  arc(x, y, anac*w, anac*h, 300, 60);
+  arc(x, y, anac * w, anac * h, 300, 60);
   arc(xc, yc, 50, 50, 0, 120);
-  
-  if(hue <= 325){
-    ana1 = 35;
-  } else{
-    ana1 = 35-360;
-  }
-  console.log("analogous",hue+ana1, sat, bri);
 
-  fill(hue+ana1, sat, bri);
-  arc(x, y, anac*w, anac*h, 60, 180);
+  if (hue <= 325) {
+    ana1 = 35;
+  } else {
+    ana1 = 35 - 360;
+  }
+  console.log("analogous", hue + ana1, sat, bri);
+
+  fill(hue + ana1, sat, bri);
+  arc(x, y, anac * w, anac * h, 60, 180);
   arc(xc, yc, 50, 50, 120, 240);
 
-  if(hue > 35){
+  if (hue > 35) {
     ana2 = -35;
-  } else{
-    ana2 = -35+360;
+  } else {
+    ana2 = -35 + 360;
   }
-  console.log("analogous",hue+ana2, sat, bri);
+  console.log("analogous", hue + ana2, sat, bri);
 
-  fill(hue+ana2, sat, bri);
-  arc(x, y, anac*w, anac*h, 180, 300);
+  fill(hue + ana2, sat, bri);
+  arc(x, y, anac * w, anac * h, 180, 300);
   arc(xc, yc, 50, 50, 240, 360);
 
-
   fill(0, 0, bg);
-  ellipse(x, y, blc*w, blc*h);
+  ellipse(x, y, blc * w, blc * h);
 
-  
-  rotate(270-60);
-  rect(x-5, y, 10, tetc*h);
+  rotate(270 - 60);
+  rect(x - 5, y, 10, tetc * h);
   rotate(120);
-  rect(x-5, y, 10, tetc*h);
+  rect(x - 5, y, 10, tetc * h);
 
-  
-// original color
+  // original color
   fill(hue, sat, bri);
   ellipse(x, y, w, h);
-    
+
   noLoop();
 }
